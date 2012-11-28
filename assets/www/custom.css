@@ -25,3 +25,12 @@ a {
 	text-align: right;
 	margin: 10px;
 }
+
+.center{
+	margin:auto;
+	text-align:center;
+}
+
+.hide{
+	visibility:hidden;
+}

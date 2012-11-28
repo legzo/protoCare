@@ -103,6 +103,8 @@ accordion = new wink.ui.layout.Accordion();
 				
 			var display = function(content)
 			{
+				
+				console.log("content="+content);
 				var date = document.getElementById("date");
 				var time = document.getElementById("time");
 				var error = false;
@@ -130,7 +132,7 @@ accordion = new wink.ui.layout.Accordion();
 				{ url: 'http://80.12.202.196/proto/date.json', type: 'json', group: 0, expires: 31536000, callback: display},
 			];
 			
-			var options = {enable: true, storage: 'localStorage'};
+			var options = {enable: true, storage: 'sqlStorage'};
 
 
 			/*
@@ -146,19 +148,21 @@ accordion = new wink.ui.layout.Accordion();
 			}, false);
 
 			window.addEventListener('online', function() {
+				console.log("network is now online : updating data...");
 				wink.load(resources, null, options);
 
 			}, false);
-			/*
+
 		setInterval(function () {
+			
+			var connected = getNetworkState();
+			
 			var lineStatus = document.getElementById('line-status');
 			var options = document.getElementById('options');
-			lineStatus.className = navigator.onLine ? 'online' : 'offline';
-			lineStatus.innerHTML = navigator.onLine ? 'Online' : 'Offline';
-			options.style.visibility = navigator.onLine ? 'visible' : 'hidden';
+			lineStatus.className = connected ? 'online' : 'offline';
+			lineStatus.innerHTML = connected ? 'Online' : 'Offline';
+			options.style.visibility = connected ? 'visible' : 'hidden';
 		}, 250);
-			
-	*/
 	
 	return main;
 }());

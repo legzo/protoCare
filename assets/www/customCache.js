@@ -530,7 +530,6 @@ wink.cache = (function()
 			_sqlError(message);
 			callback();
 		};
-		console.log("_connect "+callback);
 		_storage.open(callback, _connectError);
 	};
 	
@@ -543,7 +542,7 @@ wink.cache = (function()
 			_getLocalResource(url, type, version, expires, callback);
 		}*/
 		
-		_getLocalResource(url, type, version, expires, callback);
+		_getFreshResource(url, type, version, expires, callback);
 
 	}
 	
@@ -571,11 +570,11 @@ wink.cache = (function()
 			req.setRequestHeader("Cache-Control", "no-cache");
 			try{
 				req.send(null);
-	
+				console.log("status code = "+req.status);
 				if (req.readyState == 4
 						&& ((req.status >= 200 && req.status < 400) || req.status == 0))
 				{
-					console.debug("status code = "+req.status);
+					
 					content = req.responseText;
 	
 					var _storeSuccess = function()

@@ -1,3 +1,6 @@
+
+var date = new Date();
+
 $(document).ready(function(){
 	document.addEventListener("deviceready", onDeviceReady, false);
 });
@@ -13,7 +16,11 @@ function fetchContacts() {
 }
 
 function onSuccess(contacts) {
-	console.log('success!');
+	var now = new Date();
+	var timeToFetch = now.getTime()-date.getTime();
+	console.log('success! '+timeToFetch+'ms to fetch data');
+	$('#loading').hide();
+	$('#save').show();
 	var max = 10;
 	var i=0;
 	var j=0;
@@ -28,16 +35,19 @@ function onSuccess(contacts) {
 				
 				console.log(contact.displayName);
 				
-				$("#list1").append("<li>" + anonymize(contact.displayName) + " (" + anonymize(contact.phoneNumbers[0].value) + ")" +"</li>");
+				$("#list1").append("<li class='w_list_item w_border_bottom w_bg_light'><input type='checkbox'/>" + anonymize(contact.displayName) + " (" + anonymize(contact.phoneNumbers[0].value) + ")" +"</li>");
 			}
 			
 			i++;
 		}
+	$("#container").append('<div class="center"><input id="save" type="button" value="sauvegarder"/></div>');
+	$("#container").append(timeToFetch+'ms to fetch data');
 };
 
 function onError(contactError) {
-	//$("#msg").text('oopsy!');
 	console.log("oopsy");
+	$('#loading').hide();
+	$('#error').text("Erreur lors de l'accès aux contacts");
 };
 
 function anonymize(phoneNumber) {

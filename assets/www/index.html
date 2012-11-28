@@ -28,24 +28,47 @@
 		<script type="text/javascript" src="progressbar.js"></script>
 		<script type="text/javascript" src="accordion.js"></script>
 		<script type="text/javascript" src="popup.js"></script>
-		<script type="text/javascript" src="main.js"></script>
+		
+		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+		<script type="text/javascript" charset="utf-8" src="jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="customCache.js"></script>
+		<script type="text/javascript" src="wink.cache.sqlDatabase.js"></script>
+
 		
 		<script>
+		
+		var deviceReady = false;
+		document.addEventListener("deviceready", onDeviceReady, false);
+		
+		   function onDeviceReady() {
+			   deviceReady = true;
+		    }
 
-		  window.applicationCache.addEventListener('updateready', function(e) {
-			if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-			  // Browser downloaded a new app cache.
-			  // Swap it in and reload the page to get the new hotness.
-			  window.applicationCache.swapCache();
-			  if (confirm('A new version of this site is available. Load it?')) {
-				window.location.reload();
-			  }
-			} else {
-			  // Manifest didn't changed. Nothing new to server.
+	
+		
+		function getNetworkState() {
+			if(deviceReady){
+				var networkState = navigator.network.connection.type;
+				
+		         //console.log("networkState="+networkState);
+
+					var connected;
+					if(networkState==Connection.UNKNOWN || networkState==Connection.NONE){
+						connected = false;
+					} else {
+						connected = true;
+					}
+					
+					return connected;
+	
 			}
-		  }, false);
+
+		}
+
 
 		</script>
+		
+		<script type="text/javascript" src="main.js"></script>
 	</head>
 
 	<body>
