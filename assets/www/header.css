@@ -1,0 +1,149 @@
+.winkHeader {  
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  padding-right: 4px;
+  -webkit-box-sizing: border-box;
+  color: #e1e2dd;
+  -webkit-box-shadow: -5px 3px 5px rgba(60,60,60,.7);
+  text-shadow: #000 0px -1px 0px;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.whGradient{
+  background: -webkit-gradient(linear,
+    left top,
+    left bottom,
+    from(#555),
+    to(#000));
+}
+
+.winkHeader.secondary{
+  border-top: 1px solid #797979;
+  background: -webkit-gradient(linear,
+    left top,
+    left bottom,
+    from(rgba(61, 65, 73, 0.8)),
+    to(rgba(15, 17, 27, 0.8)));
+}
+
+.winkHeader *{
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.winkHeader a{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.winkHeader .whBtn{
+  display: inline-block;
+  height: 1.7em;  
+  line-height: 1.4em;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.winkHeader .whButton {  
+  -webkit-border-radius: 5px; 
+  border: 1px solid #000;
+  border-bottom-color: #555;  
+  margin: 0 .3em .3em 0;  
+  min-width: 3.5em;    
+}
+
+.winkHeader .whBtn.touched, .winkHeader .whIcon.touched{
+  opacity: 0.4;
+}
+
+.winkHeader .whButton.disabled{
+  opacity: 0.5;
+}
+
+.winkHeader .whIcon{
+  -webkit-border-radius: 5px; 
+  min-width: 1.7em;
+  border: 1px solid #000;
+  border-bottom-color: #555;
+  margin: 0 .3em .3em 0;
+}
+
+.winkHeader .whIcon img{
+  vertical-align: middle;
+  max-height: 1.9em;
+}
+
+.winkHeader .whButtonBack{
+  border-width: 2px 6px 2px 15px;
+  border-color: transparent;
+  min-width: 0;
+  height: 1.6em;
+  margin: 0 0 .3em .3em;
+  width: auto;
+  max-width: 4em;  
+  text-align: left;
+  -webkit-border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAACaElEQVR42q2WSYtaURCFfc95HuM8oeCsKA4oKqKIEpDe9yabQMguIbtss8gfyDp/IMlPyib7rEI2vUnlnAtKjG07vQsf3TSvz61bdaruNZkuWKPRaNPpdH4mEgmxWCx7+P1+KZfLgm8+Ai8wnyU6HA418CqXyz2YzWapVCqyXC736Pf7EovFJBKJSL1ef47vnSeFB4OBBt7E43HxeDwynU5lvV4fpdlsiqZpv7rd7peT4ojojsKhUEhFuFqtTpLP5yWdTsuTwth9HY1GJRwOy2KxOEjFMSaTidhstuPiKNz9Vng2m8l8Pr8Iq9X6uHi73X7B4tABzDHFL8Vutx+Kt1qtDXPsdrsFFVdHvIYD8UajMUgmkypfyDc9ezV74vDmM/pY13XBJgL73cSuoNVq1VIsFr/Dn4KfKupbUeJoWQ18DQQCkkqlBMU0BCVeKpU+BINB1STsLqNQVqSXnU6nIDVSq9UMQ4kzfBRScAJD4aQ0oQMfHA6HFAoFVUyjUOLZbDbm9XrVxOMJjEKJc2UymRnF6RhOMyPg3FfisKCGWfIavwqdw5vmVnbiXPiDDjt+ZiPRlnTRLeyJc2FguX0+3w+OAJ6A4/ZaqHEwFbHrGPn/Q59y5LIO17Ar6L8LF6wG3uMEqrnopGvg/z56WeBYOvjE1HATl8t1MYz+6DUHYTN4y+LwucBGOxeK88J58oJGznVwxwuEE5OjgrU4BQM6Kb5dSM1mO3+YS9rsGEwlpyKC2pwlDvdo4CU36PV6qkn+j5bO4nziawyRf8P39rPfibiwNfAODfabb8LxeLwHniJqpuCbJXAB518PVMxodD6pjgAAAABJRU5ErkJggg%3D%3D) 2 6 2 15;
+}
+
+.winkHeader .whBtn a{
+  font-size: .8125em;
+  padding-bottom: 0.3em;
+  margin: 0 .125em 0 0;
+}
+
+.winkHeader .whButtonBack  a{
+  margin-left: 0;
+  width: 100%;
+}
+
+/****************/
+/*     HOME    */
+/****************/
+.winkHeader .whBrandLogo, .winkHeader .whCustoLogo img{
+  margin: 0.5625em 0 0 .5625em;
+  vertical-align: top;
+}
+.winkHeader .whBrandLogo {
+  display: inline-block;
+  background: url(../../../common/img/logo.png) no-repeat;
+  height: 1.875em;
+  width: 1.875em;  
+  -webkit-background-size: 100%;
+}
+
+/* better orange logo for iphone 4*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2){
+  .winkHeader .whBrandLogo {
+    background: url(../../../common/img/logoHD.png) no-repeat;
+  }
+}
+
+/* font size bigger only for home page */
+.winkHeader.whHome .whTitle{
+  font-size: 1.4em;
+}
+
+.winkHeader .whTitle {
+  -webkit-box-flex: 1;
+  font-size: 1.25em;
+  padding: 0 0.55em;
+  width: inherit;
+}
+.winkHeader.secondary   .whTitle {
+  font-size: 1.1em;
+}
+
+.winkHeader   .whTitle img{
+  max-height: 2.2em;
+}
+
+.mn_menu iframe{
+  height: 13em;
+  width: 17.4375em;
+  display: block;
+}

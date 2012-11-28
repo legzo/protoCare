@@ -1,0 +1,27 @@
+
+.w_bloc strong {
+	color: #F50;
+}
+
+.right {
+	float:right;
+	margin-right:10px;
+}
+
+.small {
+	font-size:12px;
+}
+
+a {
+	text-decoration:none;
+}
+.online{
+	color: #005A04;
+	text-align: right;
+	margin: 10px;
+}
+.offline{
+	color: #FF0000;
+	text-align: right;
+	margin: 10px;
+}

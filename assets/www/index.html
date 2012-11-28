@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html manifest="cache-manifest.appcache">
+	<head>
+		<title>Wink - webapp</title>
+		
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<script src="http://debug.phonegap.com/target/target-script-min.js#testwink"></script>
+		
+		
+		<link rel="stylesheet" href="loader.css" type="text/css">
+		<link rel="stylesheet" href="custom.css" type="text/css">
+		<link rel="stylesheet" href="header.css" type="text/css">
+		<link rel="stylesheet" href="footer.css" type="text/css">
+		<link rel="stylesheet" href="carousel.css" type="text/css">
+		<link rel="stylesheet" href="accordion.css" type="text/css">
+		<link rel="stylesheet" href="wink.default.css" type="text/css">
+		<link rel="stylesheet" href="wink.default.buttons" type="text/css">
+		<link rel="stylesheet" href="wink.default.icons" type="text/css">
+		<link rel="stylesheet" href="wink.css" type="text/css">
+
+		<script type="text/javascript" src="wink.min.js"></script>
+
+		<script type="text/javascript" src="header.js"></script>
+		<script type="text/javascript" src="footer.js"></script>
+		<script type="text/javascript" src="carousel.js"></script>
+		<script type="text/javascript" src="progressbar.js"></script>
+		<script type="text/javascript" src="accordion.js"></script>
+		<script type="text/javascript" src="popup.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		
+		<script>
+
+		  window.applicationCache.addEventListener('updateready', function(e) {
+			if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+			  // Browser downloaded a new app cache.
+			  // Swap it in and reload the page to get the new hotness.
+			  window.applicationCache.swapCache();
+			  if (confirm('A new version of this site is available. Load it?')) {
+				window.location.reload();
+			  }
+			} else {
+			  // Manifest didn't changed. Nothing new to server.
+			}
+		  }, false);
+
+		</script>
+	</head>
+
+	<body>
+		<div id="header"></div>
+		<div id="line-status" class="w_bloc"></div>
+		<div id="wrapper" class="wrapper">
+			<ul id="content" class="w_list  w_border">
+				<div id="carousel"></div>
+			</ul>
+
+			<div class="w_bloc">
+					<div style="float:right"><p>Au <span id="date"><img src="img/ajax-loader.gif" /></span> à <span id="time"><img src="img/ajax-loader.gif" /></span></p></div>
+					<h2>Mon Forfait</h2>
+					<p style="margin-top:0px">
+					Forfait Origami Star 1h <br/>
+					06 55 68 95 42
+					<div>
+						</p>
+							<div id="progressBar"></div>
+						<div class="w_bloc">
+							Vous avez consommé <strong>1h30</strong> sur votre forfait de <strong>2h</strong>
+						</div>
+					</div>
+					
+					<h2>Mes services et options</h2>
+					<div style="width: 95%; margin: auto;">
+						<ul id="list1" class="w_list w_border w_radius">
+							<li class="w_list_item w_list_header w_border_bottom w_bg_dark">
+								SMS
+							</li>
+							<li class="w_list_item w_border_bottom w_bg_light">
+								<span class="option">Option 50 SMS</span><div class="right small">reste <strong>11 SMS</strong></div>
+							</li>
+						</ul>
+						<ul id="list2" class="w_list w_border w_radius">
+							<li class="w_list_item w_list_header w_border_bottom w_bg_dark">
+								<span class="option">Data</span>
+							</li>
+							<li class="w_list_item w_border_bottom w_bg_light">
+								<span class="option">Option Orange Maps</span><div class="right small">reste <strong>10Mo</strong></div>
+							</li>
+							<li class="w_list_item w_border_bottom w_bg_light">
+								<span class="option">Option Musique Premium Deezer</span>
+							</li>
+						</ul>
+						<div id="options" style="margin-top:20px;" class="w_list w_border w_radius">
+								<div class="w_list_item w_border_bottom w_bg_light">
+									<a href="options2.html">Changer mes options</a><span class="w_icon w_chevron"></span>
+								</div>
+						</div>
+					</div>
+					
+			</div>
+			
+			<!--div id="accordion" style="width: 98%; margin: auto"></div-->
+
+
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
